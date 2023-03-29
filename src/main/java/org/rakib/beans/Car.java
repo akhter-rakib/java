@@ -1,7 +1,7 @@
 package org.rakib.beans;
 
 public class Car {
-    private Integer Id;
+    private Integer id;
     private String make;
     private String model;
     private String color;
@@ -9,7 +9,7 @@ public class Car {
     private Double price;
 
     public Car(Integer id, String make, String model, String color, Integer year, Double price) {
-        Id = id;
+        this.id = id;
         this.make = make;
         this.model = model;
         this.color = color;
@@ -18,11 +18,11 @@ public class Car {
     }
 
     public Integer getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Integer id) {
-        Id = id;
+        id = id;
     }
 
     public String getMake() {
@@ -63,5 +63,17 @@ public class Car {
 
     public void setPrice(Double price) {
         this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "id=" + id +
+                ", make='" + make + '\'' +
+                ", model='" + model + '\'' +
+                ", color='" + color + '\'' +
+                ", year=" + year +
+                ", price=" + price +
+                '}';
     }
 }
