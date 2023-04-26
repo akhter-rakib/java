@@ -26,6 +26,17 @@ public class Filtering {
     }
 
     @Test
+    void test() throws IOException {
+        Predicate<Car> c = car -> car.getPrice() < 20_000 && car.getColor().equals("Yellow");
+        List<Car> list = MockData.getCars();
+        List<Car> list1 = list.stream()
+                .filter(car -> car.getPrice() < 20_000 && car.getColor().equals("Yellow"))
+                .toList();
+        list1.forEach(System.out::println);
+
+    }
+
+    @Test
     public void dropWhile() {
         /*Using dropWhile*/
         Stream.of(2, 4, 6, 8, 9, 10, 12)

@@ -8,6 +8,7 @@ import org.rakib.mockdata.MockData;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class TransformationsMapAndReduce {
 
@@ -39,6 +40,13 @@ public class TransformationsMapAndReduce {
         int sub = Arrays.stream(integers).reduce(0, (a, b) -> a - b);
         System.out.println(sum);
         System.out.println(sub);
+    }
+
+    @Test
+    public void lowerToUpperCase() {
+        List<String> list = Stream.of("a", "b", "c", "d", "e")
+                .map(String::toUpperCase).toList();
+        System.out.println(list);
     }
 
 }
