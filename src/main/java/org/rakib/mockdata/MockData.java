@@ -5,6 +5,7 @@ import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
 import org.apache.commons.io.IOUtils;
 import org.rakib.beans.Car;
+import org.rakib.beans.Employee;
 import org.rakib.beans.Item;
 import org.rakib.beans.Order;
 import org.rakib.beans.People;
@@ -46,5 +47,14 @@ public class MockData {
                 new Item("Product E", 6, 18.00),
                 new Item("Product F", 7, 52.00)));
         return List.of(order, ord2, ord3);
+    }
+
+    public static List<Employee> employees() {
+        return Arrays.asList(
+                new Employee(1, "Rakib", "CSE", 12_00.00),
+                new Employee(2, "Kasem", "CSE", 10_00.00),
+                new Employee(3, "Hasib", "BBA", 12_00.00),
+                new Employee(4, "Bokum", "BBA", 19_00.00)
+        );
     }
 }
