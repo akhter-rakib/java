@@ -5,8 +5,10 @@ import org.rakib.beans.Car;
 import org.rakib.mockdata.MockData;
 
 import java.io.IOException;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -43,6 +45,43 @@ public class GroupingData {
                         Function.identity(),
                         Collectors.counting()
                 ));
+        System.out.println(collect);
+    }
+
+    @Test
+    void countByMake() throws IOException {
+        List<Car> cars = MockData.getCars();
+        Map<String, Long> collect = cars.stream()
+                .collect(Collectors.groupingBy(
+                        Car::getMake,
+                        Collectors.counting()
+                ));
+        System.out.println(collect);
+    }
+
+    @Test
+    void highestPriceMake() throws IOException {
+        Map<String, Optional<Car>> collect = MockData.getCars().stream()
+                .collect(
+                        Collectors.groupingBy(
+                                Car::getMake,
+                                Collectors.maxBy(Comparator.comparingDouble(Car::getPrice))
+                        )
+                );
+        System.out.println(collect);
+    }
+    @Test
+    void highestPriceMakeCarID() throws IOException {
+        Map<String, Optional<Integer>> collect = MockData.getCars().stream()
+                .collect(
+                        Collectors.groupingBy(
+                                Car::getMake,
+                                Collectors.collectingAndThen(
+                                        Collectors.maxBy(Comparator.comparingDouble(Car::getPrice)),
+                                        car -> car.map(Car::getId)
+                                )
+                        )
+                );
         System.out.println(collect);
     }
 }
