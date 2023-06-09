@@ -1,0 +1,12 @@
+The singleton pattern is a design pattern that restricts the instantiation of a class to one object.
+
+ Sometimes we need to have only one instance of our class for example a single DB connection shared
+ by multiple objects as creating a separate DB connection for every object may be costly. Similarly,
+ there can be a single configuration manager or error manager in an application that handles all problems
+ instead of creating multiple managers.
+
+We can implement Singleton Design pattern in the bellow method
+ 1. Classic Implementation
+ 2. Make getInstance() synchronized to prevent thread safe
+ 3. Eager Instantiation
+ 4. (Best): Use “Double Checked Locking”
