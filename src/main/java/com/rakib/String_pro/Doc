@@ -1,0 +1,10 @@
+String Immutable :
+When we talk about the String object is immutable actually we are talking about the String object in memory.
+Once a String is created in String pool then Never can change this value . Because it can be used by another reference.
+
+Benefit of String Immutability :
+Thread Safety: Immutable strings can be safely shared across multiple threads without the risk of data corruption, as their state cannot be modified after creation.
+
+Security: Immutability ensures that sensitive information stored in strings cannot be altered maliciously, providing a level of security, especially in scenarios like authentication or cryptography.
+
+Efficiency: Immutable strings allow for optimization in memory management and string operations, as certain optimizations can be applied knowing that the content of a string will not change.
