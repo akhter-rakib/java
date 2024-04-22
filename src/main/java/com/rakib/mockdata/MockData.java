@@ -34,17 +34,25 @@ public class MockData {
     }
 
     public static Map<String, Double> employee() {
-        Map<String, Double> employee = new HashMap<>();
-        employee.put("anil", 1000.00);
-        employee.put("bhavna", 130.000);
-        employee.put("micael", 1500.00);
-        employee.put("tom", 1600.00);//output
-        employee.put("ankit", 1200.00);
-        employee.put("ankur", 1200.00);
-        employee.put("daniel", 1700.00);
-        employee.put("daniel angel", 1700.00);
-        employee.put("james", 1400.00);
-        employee.put("rakib", 45400.00);
-        return employee;
+        return Map.ofEntries(
+                Map.entry("anil", 1000.00),
+                Map.entry("bhavna", 130.00),
+                Map.entry("micael", 1500.00),
+                Map.entry("tom", 1600.00),
+                Map.entry("ankit", 1200.00),
+                Map.entry("ankur", 1200.00),
+                Map.entry("daniel", 1700.00),
+                Map.entry("daniel angel", 1700.00),
+                Map.entry("james", 1400.00),
+                Map.entry("rakib", 45400.00)
+        );
+    }
+
+    public static List<Employee> employeeList() {
+        return List.of(
+                new Employee("Rakib", 1000),
+                new Employee("Sakib", 1200),
+                new Employee("Akib", 1400)
+        );
     }
 }
