@@ -55,4 +55,14 @@ public class MockData {
                 new Employee("Akib", 1400)
         );
     }
+
+    public static List<CityEmployee> cityEmployees() {
+        return List.of(
+                new CityEmployee("John Doe", 75000, "New York", 14),
+                new CityEmployee("Jane Smith", 30000, "Los Angeles", 45),
+                new CityEmployee("Michael Brown", 7000, "Chicago", 20),
+                new CityEmployee("Alice Johnson", 92000, "San Francisco", 15),
+                new CityEmployee("David Miller", 55000, "Houston", 18)
+        );
+    }
 }
