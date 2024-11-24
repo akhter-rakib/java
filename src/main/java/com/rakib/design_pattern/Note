@@ -1,0 +1,7 @@
+MySingleton is designed by Traditional Singleton Implementation
+We can break this by the following way
+1. Reflection
+2. Serialize
+3. Clone
+
+To Protect that we can design the MySingleton class like MySingletonV2 class way
