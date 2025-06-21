@@ -33,9 +33,22 @@ public class FindAllDuplicate {
         return new ArrayList<>(duplicates);
     }
 
+    static List<Integer> findDuplicatesUsingStream(int[] args) {
+
+        if (args == null || args.length < 2) {
+            return Collections.emptyList();
+        }
+        Set<Integer> seen = new HashSet<>();
+        return Arrays.stream(args)
+                .boxed()
+                .filter(value -> !seen.add(value))
+                .distinct()
+                .toList();
+    }
+
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 2, 4, 5, 3};
-        List<Integer> list = findDuplicates(arr);
+        List<Integer> list = findDuplicatesUsingStream(arr);
         /*ArrayList<Integer> list = findAllDuplicate(arr);*/
         System.out.println(list); // Output: [2, 3]
     }
